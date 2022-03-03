@@ -2,7 +2,7 @@
 
 ## 作成したときの手順
 ```sh
-go mod init naka-disc/cav-load
+go mod init naka-disc/csv-load
 ```
 
 ## ビルド

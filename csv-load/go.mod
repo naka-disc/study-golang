@@ -1,4 +1,4 @@
-module naka-disc/cav-load
+module naka-disc/csv-load
 
 go 1.17
 
