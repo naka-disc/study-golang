@@ -55,6 +55,29 @@ func sel() ([]Member, bool) {
 	return memberList, true
 }
 
+// INSERT
+func insert() {
+	// SQLite3と接続
+	db, err := sql.Open("sqlite3", "./sample.sqlite3") //接続開始（example.sqlに保存する）
+	if err != nil {
+		fmt.Println("Database Connection Error.")
+		return
+	}
+	defer db.Close()
+
+	// SQLを実行するために、ステートメントを生成
+	stmt, err := db.Prepare("INSERT INTO member (name) VALUES ($1)")
+	if err != nil {
+		fmt.Println("Database Create Error.")
+	}
+	defer stmt.Close()
+
+	// SQL実行
+	stmt.Exec("Sample Taro")
+}
+
 func main() {
-	sel()
+	insert()
+	m, _ := sel()
+	fmt.Println(m)
 }
