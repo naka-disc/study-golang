@@ -1,0 +1,6 @@
+-- VCの入退室ログ
+DROP TABLE member;
+CREATE TABLE member (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT
+);
